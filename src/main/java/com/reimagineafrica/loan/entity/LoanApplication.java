@@ -116,6 +116,11 @@ public class LoanApplication {
 
     private String createdBy;
 
+    // Which SACCO this loan belongs to — used to resolve per-SACCO config
+    @Column(nullable = false)
+    @Builder.Default
+    private String saccoCode = "DEFAULT";
+
     // ── Helper methods ──────────────────────────────────────────────
 
     public boolean isFullyApproved() {
